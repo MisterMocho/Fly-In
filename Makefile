@@ -28,7 +28,7 @@ visual:
 	@echo "A executar o Fly-in (Modo Visual)..."
 	$(PYTHON) $(MAIN) $(ARGS) --visual
 
-debug: install
+debug:
 	@echo "A iniciar em modo debug..."
 	$(PYTHON) -m pdb $(MAIN) $(ARGS)
 
