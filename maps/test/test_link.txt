@@ -1,0 +1,4 @@
+nb_drones: 5
+start_hub: start 0 0 [max_drones=5]
+end_hub: end 1 0 [max_drones=5]
+connection: start-end [max_link_capacity=1]
