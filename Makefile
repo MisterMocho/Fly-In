@@ -43,13 +43,13 @@ fclean: clean
 	@echo "A remover ambiente virtual..."
 	rm -rf $(VENV_DIR)
 
-lint: install
+lint:
 	@echo "A correr flake8..."
 	$(VENV_BIN)/flake8 .
 	@echo "A correr mypy..."
 	$(VENV_BIN)/mypy .
 
-lint-strict: install
+lint-strict:
 	@echo "A correr mypy (strict)..."
 	$(VENV_BIN)/mypy --strict .
 
