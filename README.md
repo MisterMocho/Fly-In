@@ -51,6 +51,10 @@ Remove temporary files and caches:
 ```bash
 make clean
 ```
+To remove temporary files, caches and virtual environment:
+```bash
+make fclean
+```
 ## Algorithm & Implementation Strategy
 
 To solve the Multi-Agent Pathfinding (MAPF) problem efficiently, this project implements a **Space-Time A* (Cooperative Pathfinding)** algorithm.
