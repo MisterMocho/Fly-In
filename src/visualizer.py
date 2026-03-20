@@ -1,5 +1,6 @@
 from models import Zone, Drone
 import colors
+import re
 
 
 class Visualizer:
@@ -95,10 +96,20 @@ class Visualizer:
                         symbol = "P"
                     else:
                         symbol = "N"
+                    parts = zone.name.split('_')
+                    initials = ""
+                    for p in parts:
+                        if p:
+                            initials += p[0].upper()
+                            nums = "".join(re.findall(r'\d+', p))
+                            initials += nums
 
-                # Formatting: 3 chars wide, centered, resets color after
-                line += f"{color}{symbol:^3}{colors.RESET} "
+                    # Combinação final: Ex: R_CR9 ou D1_CR9
+                    symbol = f"{symbol}_{initials}"
+
+                # Formatting: 8 chars wide, centered, resets color after
+                line += f"{color}{symbol:<8}{colors.RESET} "
 
             print(line)
         # Dynamic separator line based on width
-        print("-" * ((max_x - min_x + 1) * 4))
+        print("-" * ((max_x - min_x + 1) * 9))
